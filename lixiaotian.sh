@@ -234,7 +234,9 @@ EOF
 # Secrets for authentication using CHAP
 # client    server    secret    IP addresses
 ${username}    l2tpd    ${password}       ${iprange}.2
-game    l2tpd    123       ${iprange}.3EOF
+game    l2tpd    123       ${iprange}.3
+EOF
+
 }
 
 
