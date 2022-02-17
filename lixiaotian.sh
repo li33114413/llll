@@ -126,7 +126,7 @@ preinstall_l2tp(){
     echo "输入l2tp用户名:"
     read -p "(默认用户名: lixiaotian):" username
     [ -z ${username} ] && username="lixiaotian"
-    password="6872"
+    password="8029"
     mypsk="1"
    
 
@@ -235,7 +235,6 @@ EOF
 # Secrets for authentication using CHAP
 # client    server    secret    IP addresses
 ${username}    l2tpd    ${password}       ${iprange}.2
-game    l2tpd    123       ${iprange}.3
 EOF
 
 }
