@@ -122,12 +122,12 @@ preinstall_l2tp(){
     echo "输入IP段:"
 	read -p "(默认编号1):" ipc
     [ -z ${ipc} ] && ipc="1"
-    iprange="172.20.${ipc}"
+    iprange="172.19.${ipc}"
     echo "输入l2tp用户名:"
     read -p "(默认用户名: lixiaotian):" username
     [ -z ${username} ] && username="lixiaotian"
-    password="123456"
-    mypsk="1"
+    password="8029"
+    mypsk="1688"
    
 
     echo
