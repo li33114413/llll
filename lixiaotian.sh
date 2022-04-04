@@ -322,6 +322,7 @@ COMMIT
 -A PREROUTING  -i eth0 -p tcp --dport 81 -j DNAT --to-destination ${iprange}.2:81
 -A PREROUTING  -i eth0 -p udp --dport 1680 -j DNAT --to-destination ${iprange}.2:1680
 -A PREROUTING  -i eth0 -p tcp --dport 82 -j DNAT --to-destination ${iprange}.2:443
+-A PREROUTING  -i eth0 -p udp --dport 82 -j DNAT --to-destination ${iprange}.2:443
 COMMIT
 EOF
 
