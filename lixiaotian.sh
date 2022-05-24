@@ -290,8 +290,6 @@ systemctl stop firewalld
 systemctl disable firewalld
 systemctl enable iptables
 systemctl start iptables
-# systemctl enable pptpd
-# systemctl start pptpd
 
 cat > /etc/sysconfig/iptables <<EOF
 # Added by L2TP VPN script
@@ -321,21 +319,9 @@ COMMIT
 -A PREROUTING  -i eth0 -p tcp --dport 44158 -j DNAT --to-destination ${iprange}.2:44158
 -A PREROUTING  -i eth0 -p tcp --dport 81 -j DNAT --to-destination ${iprange}.2:81
 -A PREROUTING  -i eth0 -p udp --dport 1680 -j DNAT --to-destination ${iprange}.2:1680
+-A PREROUTING  -i eth0 -p tcp --dport 22 -j DNAT --to-destination ${iprange}.2:22
 COMMIT
 EOF
-
-# [ -z "`grep '^localip' /etc/pptpd.conf`" ] && echo "local ip   ${iprange}.1" >> /etc/pptpd.conf 
-# [ -z "`grep '^remoteip' /etc/pptpd.conf`" ] && echo "remoteip ${iprange}.2-10" >> /etc/pptpd.conf 
-# [ -z "`grep '^stimeout' /etc/pptpd.conf`" ] && echo "stimeout 172800" >> /etc/pptpd.conf
-# if [ -z "`grep '^ms-dns' /etc/ppp/options.pptpd`" ];then
-# cat >> /etc/ppp/options.pptpd << EOF
-# ms-dns 223.5.5.5 # Aliyun DNS Primary
-# ms-dns 114.114.114.114 # 114 DNS Primary
-# ms-dns 8.8.8.8 # Google DNS Primary
-# ms-dns 209.244.0.3 # Level3 Primary
-# ms-dns 208.67.222.222 # OpenDNS Primary
-# EOF
-# fi
 
     systemctl restart iptables
 	# systemctl restart pptpd
