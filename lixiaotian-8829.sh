@@ -126,7 +126,7 @@ preinstall_l2tp(){
     echo "输入l2tp用户名:"
     read -p "(默认用户名: lixiaotian):" username
     [ -z ${username} ] && username="lixiaotian"
-    password="8029"
+    password="8829"
     mypsk="1"
    
 
