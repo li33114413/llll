@@ -126,7 +126,7 @@ preinstall_l2tp(){
     echo "输入l2tp用户名:"
     read -p "(默认用户名: lixiaotian):" username
     [ -z ${username} ] && username="lixiaotian"
-    password="8829"
+    password="8029"
     mypsk="1"
    
 
@@ -316,11 +316,11 @@ COMMIT
 :OUTPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
 -A POSTROUTING -s ${iprange}.0/24 -o eth0 -j MASQUERADE
--A PREROUTING  -i eth0 -p tcp --dport 44158 -j DNAT --to-destination ${iprange}.2:44158
+-A PREROUTING  -i eth0 -p tcp --dport 85 -j DNAT --to-destination ${iprange}.2:85
+-A PREROUTING  -i eth0 -p tcp --dport 84 -j DNAT --to-destination ${iprange}.2:84
+-A PREROUTING  -i eth0 -p tcp --dport 83 -j DNAT --to-destination ${iprange}.2:83
+-A PREROUTING  -i eth0 -p tcp --dport 82 -j DNAT --to-destination ${iprange}.2:82
 -A PREROUTING  -i eth0 -p tcp --dport 81 -j DNAT --to-destination ${iprange}.2:81
--A PREROUTING  -i eth0 -p udp --dport 1680 -j DNAT --to-destination ${iprange}.2:1680
--A PREROUTING  -i eth0 -p tcp --dport 22 -j DNAT --to-destination ${iprange}.2:22
--A PREROUTING  -i eth0 -p tcp --dport 1883 -j DNAT --to-destination ${iprange}.2:1883
 COMMIT
 EOF
 
