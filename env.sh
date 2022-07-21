@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 filename="/etc/systemd/system/forta.service.d/env.conf"
 cat>"${filename}"<<EOF
 [Service]
