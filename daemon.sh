@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 filename="/etc/docker/daemon.json"
 cat>"${filename}"<<EOF
 {
